@@ -8,6 +8,27 @@ An easy to use .php script to get telecom usage in the form of an array.
 
 More information on what each function returns is discussed in the php file.
 
+### Output example
+<pre>Array
+(
+    [status] => 1
+    [message] => Logged in
+)
+Array
+(
+    [status] => 1
+    [message] => Usage data found
+    [data] => Array
+        (
+            [account_no] => 123 - 456
+            [account_type] => Explorer 20GB
+            [cyle_start_date] => 09 Dec 2011
+            [cyle_end_date] => 08 Jan 2012
+            [total_MB] => 20480
+            [used_MB] => 10534.9
+        )
+)</pre>
+
 ### Requirements
 * PHP 5.3
 * PHP cURL
