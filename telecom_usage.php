@@ -4,7 +4,7 @@ $data['username'] = ''; // include .xadsl
 $data['password'] = '';
 
 // Advanced settings
-$loginData['coockie_location'] 	= 'cookie.txt';
+$loginData['coockie_location']	= 'cookie.txt';
 $loginData['url'] 				= 'https://login1.telecom.co.nz/distauth/UI/Login';
 $loginData['ref_url'] 			= 'https://login1.telecom.co.nz/distauth/UI/Login?realm=XtraUsers';
 $loginData['usage_url'] 		= 'https://www.telecom.co.nz/jetstreamum/xtraSum?link=rdt';
