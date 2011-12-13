@@ -13,7 +13,7 @@ More information on what each function returns is discussed in the php file.
 * PHP cURL
 
 ## Why?
-1. Telecoms usage page is a jock and hasn't been updated since… ever?
+1. Telecoms usage page is a joke and hasn't been updated since… ever?
 2. Telecom doesn't provide any easy to use API to get usage data
 3. I wanted to easily see what my usage using my own scripts
 
