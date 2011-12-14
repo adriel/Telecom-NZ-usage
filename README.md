@@ -2,11 +2,46 @@
 An easy to use .php script to get telecom usage in the form of an array. 
 
 ## Usage
-1. Add your Telecom `username` and `password`
+1. Add your Telecom `username` and `password` to the `$data['username']` and `$data['password']` array
 2. Un/comment the functions you require
 3. Use with your own scripts
 
 More information on what each function returns is discussed in the php file.
+
+### 3 step process
+#### Use this line of code only once, to get the logged in cookie data saved to the .txt file.
+    print_r( curl_grab_page($loginData['url'],$loginData['ref_url'],$loginData['post_fields'],$loginData['user_agent'],$loginData['coockie_location']) );
+
+#### Use these two lines to get the usage data and parse it to an array
+
+    $usageSource = get_page($loginData['usage_url'],$loginData['user_agent'],$loginData['coockie_location']);
+
+    $data_arr = html_to_array($usageSource);
+
+#### Use this line to see what the array contains
+    print_r( $data_arr );
+
+
+### Code examples
+Insert these examples below `$data_arr = html_to_array($usageSource);` in the .php script.
+
+#### Get current data used:
+    echo $data_arr['data']['used_MB'] . 'MB of data used from a ' . $data_arr['data']['total_MB'] . ' MB cap.';
+This will output: `15116.49 MB of data used from a 20480MB cap.`
+
+#### Calculate how much internet you have left:
+    $data_left = $data_arr['data']['total_MB'] - $data_arr['data']['used_MB'];
+    echo 'You have ' . (int)$data_left . ' MB left.';
+This will output: `You have 5363 MB left.`
+
+#### Get custom message when close to going over the cap:
+This will check if you have used 15GB or more data and give a customized message.
+    if ( $data_arr['data']['used_MB'] >= 15000 ) {
+	    echo 'Over half your cap has been used.';
+    }else {
+	    echo 'You have used less then 15GB of data so far.';
+    }
+This could output rather `Over half your cap has been used.` or `You have used less then 15GB of data so far.`
 
 ### Output example
 <pre>Array

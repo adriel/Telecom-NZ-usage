@@ -52,7 +52,7 @@ function curl_grab_page($url,$ref_url,$curl_data,$user_agent,$cookie_loc){
 	$options = array( 
 		CURLOPT_URL				=> $ref_url,
 		CURLOPT_RETURNTRANSFER	=> false,			// return web page 
-		// CURLOPT_REFERER			=> true,			// follow redirects 
+		// CURLOPT_REFERER		=> true,			// follow redirects 
 		// CURLOPT_FOLLOWLOCATION	=> true,			// follow location 
 		CURLOPT_USERAGENT		=> $user_agent,     // who am i 
 		CURLOPT_COOKIEJAR		=> $cookie_loc,
