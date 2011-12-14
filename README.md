@@ -36,6 +36,7 @@ This will output: `You have 5363 MB left.`
 
 #### Get custom message when close to going over the cap:
 This will check if you have used 15GB or more data and give a customized message.
+
     if ( $data_arr['data']['used_MB'] >= 15000 ) {
 	    echo 'Over half your cap has been used.';
     }else {
